@@ -1,0 +1,81 @@
+Gaussian pulse PINN error metrics
+=================================
+Model directory: models_gaussian_pulse
+Domain: x in [0, 6.283185307180], t in [0, 1.0]
+
+global_relative_l2: 6.16361106e-03   
+global_relative_l1: 1.34328278e-02   ||phi_PINN - phi_exact||_1 / ||phi_exact||_1
+relative_linf: 7.02597201e-03    *不用这个误差
+rmse: 1.01804606e-03       sqrt(mean((phi_PINN - phi_exact)^2))，均方根误差
+mae: 5.14665984e-04        mean(|phi_PINN - phi_exact|)，平均绝对误差
+max_absolute_error: 7.02597201e-03       max |phi_PINN - phi_exact|
+注1：相对L2误差的量级一般和采样点数无关（可以看成是一种“平均”）
+
+
+figure:
+line_profiles_pinn_vs_exact.png：
+第一，看波峰位置是否正确
+第二，看波形是否正确
+第三，看局部误差在哪里
+这张图说明：改进 PINN 方法能够准确捕捉高斯脉冲的传播、峰值位置和整体形状。
+spacetime_solution_and_error.png：
+(x,t) ∈ [0, 2π] × [0, 1]
+左图：PINN solution   
+中图：Exact solution
+右图：Absolute error
+左图 PINN 学到的完整时空解：看到一条亮色的高斯脉冲带，从左下方随时间向右上方移动。由于速度 u=1，脉冲中心大概沿着：x = t移动。
+如果误差图中只有很小范围的弱亮区，且没有大面积高误差区域，说明方法是稳定的。
+time_error_evolution.png：
+这张图展示不同时间的误差。
+蓝色曲线：每个时间截面的相对 L2 误差：||phi_PINN(x,t_j)- =phi_exact(x,t_j)||_2 / ||phi_exact(x,t_j)||_2
+红色虚线：每个时间截面的最大绝对误差：max_x |phi_PINN(x,t_j) - phi_exact(x,t_j)|
+
+
+
+...
+=== Step 20/20, t in [0.950, 1.000] ===
+Iter 100, loss = 5.991e-06
+Iter 200, loss = 1.284e-06
+Iter 300, loss = 7.173e-07
+Iter 400, loss = 5.077e-07
+Iter 500, loss = 4.207e-07
+Iter 600, loss = 3.752e-07
+Iter 700, loss = 3.467e-07
+Iter 800, loss = 3.273e-07
+Iter 900, loss = 3.124e-07
+Iter 1000, loss = 3.030e-07
+Iter 1100, loss = 2.956e-07
+Iter 1200, loss = 2.895e-07
+Iter 1300, loss = 2.844e-07
+Iter 1400, loss = 2.800e-07
+Iter 1500, loss = 2.761e-07
+Iter 1600, loss = 2.726e-07
+Iter 1700, loss = 2.866e-07
+Iter 1800, loss = 2.832e-07
+Iter 1900, loss = 2.802e-07
+Iter 2000, loss = 2.773e-07
+Iter 2100, loss = 2.747e-07
+Iter 2200, loss = 2.722e-07
+Iter 2300, loss = 2.698e-07
+Iter 2400, loss = 2.675e-07
+Iter 2500, loss = 2.639e-07
+Iter 2600, loss = 2.619e-07
+Iter 2700, loss = 2.599e-07
+Iter 2800, loss = 2.580e-07
+Iter 2900, loss = 2.561e-07
+Iter 3000, loss = 2.543e-07
+Iter 3100, loss = 2.526e-07
+Iter 3200, loss = 2.509e-07
+Iter 3300, loss = 2.569e-07
+Iter 3400, loss = 2.551e-07
+Iter 3500, loss = 2.534e-07
+Iter 3600, loss = 2.517e-07
+Iter 3700, loss = 2.500e-07
+Iter 3800, loss = 2.484e-07
+Iter 3900, loss = 2.468e-07
+Iter 4000, loss = 2.453e-07
+Step 20 training time = 27.35 s
+
+==============================
+Total training time = 560.98 s
+==============================

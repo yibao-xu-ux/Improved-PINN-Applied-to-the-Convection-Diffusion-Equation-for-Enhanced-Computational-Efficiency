@@ -1,0 +1,65 @@
+2D harmonic wave PINN error metrics
+===================================
+Model directory: D:\experiment\models_harmonic_wave_2d
+Domain: x,y in [0, 6.283185307180], t in [0, 1.0]
+Evaluation grid: nx=160, ny=160, nt=61
+
+global_relative_l2: 1.26802865e-02
+global_relative_l1: 1.09767606e-02
+rmse: 7.08761159e-03
+mae: 5.48849022e-03
+max_absolute_error: 4.87215519e-02
+
+
+
+=== Step 10/10, t in [0.900, 1.000] ===
+Iter 100, loss = 3.764e-03
+Iter 200, loss = 2.039e-03
+Iter 300, loss = 1.534e-03
+Iter 400, loss = 1.256e-03
+Iter 500, loss = 1.073e-03
+Iter 600, loss = 2.624e-03
+Iter 700, loss = 8.600e-04
+Iter 800, loss = 7.749e-04
+Iter 900, loss = 1.262e-03
+Iter 1000, loss = 6.640e-04
+Iter 1100, loss = 6.122e-04
+Iter 1200, loss = 8.164e-04
+Iter 1300, loss = 5.386e-04
+Iter 1400, loss = 5.042e-04
+Iter 1500, loss = 4.743e-04
+Iter 1600, loss = 1.564e-03
+Iter 1700, loss = 4.330e-04
+Iter 1800, loss = 4.111e-04
+Iter 1900, loss = 3.936e-04
+Iter 2000, loss = 3.764e-04
+Iter 2100, loss = 3.609e-04
+Iter 2200, loss = 3.468e-04
+Iter 2300, loss = 3.340e-04
+Iter 2400, loss = 3.223e-04
+Iter 2500, loss = 3.116e-04
+Iter 2600, loss = 3.018e-04
+Iter 2700, loss = 2.927e-04
+Iter 2800, loss = 3.028e-04
+Iter 2900, loss = 2.787e-04
+Iter 3000, loss = 2.715e-04
+Iter 3100, loss = 2.649e-04
+Iter 3200, loss = 2.586e-04
+Iter 3300, loss = 2.528e-04
+Iter 3400, loss = 2.473e-04
+Iter 3500, loss = 2.421e-04
+Iter 3600, loss = 2.373e-04
+Iter 3700, loss = 2.328e-04
+Iter 3800, loss = 2.285e-04
+Iter 3900, loss = 2.243e-04
+Iter 4000, loss = 2.204e-04
+Iter 4100, loss = 2.167e-04
+Iter 4200, loss = 2.132e-04
+Iter 4300, loss = 2.098e-04
+Iter 4400, loss = 2.066e-04
+Iter 4500, loss = 2.035e-04
+Step 10 training time = 76.15 s
+
+==============================
+Total training time = 1565.16 s
+==============================

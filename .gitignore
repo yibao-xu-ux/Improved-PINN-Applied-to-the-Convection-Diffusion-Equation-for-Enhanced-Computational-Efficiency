@@ -1,0 +1,12 @@
+pytorch_env/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+.vscode/
+.ipynb_checkpoints/
+
+.DS_Store
+Thumbs.db

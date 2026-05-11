@@ -1,0 +1,77 @@
+Square wave PINN error metrics
+==============================
+Model directory: D:\experiment\models_square_wave
+Domain: x in [0, 6.283185307180], t in [0, 1.0]
+
+global_relative_l2: 3.20495428e-02
+global_relative_l1: 5.84613864e-03
+rmse: 1.80187853e-02
+mae: 1.85776205e-03
+max_absolute_error: 7.66618997e-01
+
+注意 max_absolute_error 偏大，多半来自 t=0 初始间断点附近。方波初值有跳跃，PINN 会有平滑化/过渡层误差，这是这个算例里很正常也很有信息量的地方。
+图像上也可以看出来转折的那部分误差比较大
+
+=== Step 10/10, t in [0.900, 1.000] ===
+Iter 100, loss = 2.250e-05
+Iter 200, loss = 1.289e-05
+Iter 300, loss = 9.437e-06
+Iter 400, loss = 7.335e-06
+Iter 500, loss = 6.002e-06
+Iter 600, loss = 5.088e-06
+Iter 700, loss = 4.413e-06
+Iter 800, loss = 3.879e-06
+Iter 900, loss = 3.443e-06
+Iter 1000, loss = 3.080e-06
+Iter 1100, loss = 4.189e-06
+Iter 1200, loss = 3.648e-06
+Iter 1300, loss = 3.220e-06
+Iter 1400, loss = 2.874e-06
+Iter 1500, loss = 2.592e-06
+Iter 1600, loss = 2.361e-06
+Iter 1700, loss = 2.170e-06
+Iter 1800, loss = 2.012e-06
+Iter 1900, loss = 1.881e-06
+Iter 2000, loss = 1.772e-06
+Iter 2100, loss = 1.673e-06
+Iter 2200, loss = 1.603e-06
+Iter 2300, loss = 1.545e-06
+Iter 2400, loss = 1.497e-06
+Iter 2500, loss = 1.456e-06
+Iter 2600, loss = 1.422e-06
+Iter 2700, loss = 1.393e-06
+Iter 2800, loss = 1.368e-06
+Iter 2900, loss = 1.346e-06
+Iter 3000, loss = 1.327e-06
+Iter 3100, loss = 1.589e-06
+Iter 3200, loss = 1.563e-06
+Iter 3300, loss = 1.540e-06
+Iter 3400, loss = 1.519e-06
+Iter 3500, loss = 1.499e-06
+Iter 3600, loss = 1.481e-06
+Iter 3700, loss = 1.465e-06
+Iter 3800, loss = 1.449e-06
+Iter 3900, loss = 1.435e-06
+Iter 4000, loss = 1.421e-06
+Iter 4100, loss = 1.449e-06
+Iter 4200, loss = 1.433e-06
+Iter 4300, loss = 1.418e-06
+Iter 4400, loss = 1.405e-06
+Iter 4500, loss = 1.393e-06
+Iter 4600, loss = 1.381e-06
+Iter 4700, loss = 1.370e-06
+Iter 4800, loss = 1.360e-06
+Iter 4900, loss = 1.350e-06
+Iter 5000, loss = 1.340e-06
+Step 10 training time = 44.05 s
+
+==============================
+Total training time = 610.31 s
+==============================
+
+10个小区间足够了，这三个例子中，方波测试可能是最难的一个，都做得很好
+
+
+💡：
+一维方波测试的训练初始条件用的是 t = 0 时刻的跳跃解，也就是严格的分段方波
+二维改用gpt的建议--初始条件改成t很小的时候的精确解

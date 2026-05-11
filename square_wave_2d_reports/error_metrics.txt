@@ -1,0 +1,11 @@
+2D square wave PINN error metrics
+=================================
+Model directory: d:\experiment\models_square_wave_2d_refined
+Domain: x,y in [0, 6.283185307180], t in [0.0, 1.0]
+Evaluation grid: nx=160, ny=160, nt=61
+
+global_relative_l2: 1.64755415e-02
+global_relative_l1: 5.55762881e-03
+rmse: 2.57777539e-03
+mae: 1.38993273e-04
+max_absolute_error: 7.66142368e-01
